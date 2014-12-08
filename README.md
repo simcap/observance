@@ -6,11 +6,13 @@ Imagine a person flashing at a distance a card
 displaying a number from 1 to 10. Let us say five people
 are observing this remote scene and note their observations during 4 rounds.
 
+```ruby
 observer_1 = {first: 8, second: 6, third: 1, fourth: 4}
 observer_2 = {first: 8, second: 6, third: 7, fourth: 4}
 observer_3 = {first: 8, second: 9, third: 7, fourth: 4}
 observer_4 = {first: 8, second: 9, third: 2, fourth: 8}
 observer_5 = {first: 0, second: 2, third: 0, fourth: 1}
+```
 
 The probable outcome seems to be 8-(6 or 9)-7-4. So the probable observation
 would either be 8-6-7-4 or 8-9-7-4.
