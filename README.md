@@ -1,10 +1,11 @@
 # Observance
 
-Given multiple observations returns the most likely.
+Given observations returns the most likely. An observation is anything
+that responds to `to_h` or `to_hash`
 
-Imagine a person flashing at a distance a card 
-displaying a number from 1 to 10. Let us say five people
-are observing this remote scene and note their observations during 4 rounds.
+As an example imagine a person flashing at a distance a card 
+displaying a number from 1 to 10. Let us say five people are observing
+this remote scene and note their observations during 4 rounds.
 
 ```ruby
 observer_1 = {first: 8, second: 6, third: 1, fourth: 4}
