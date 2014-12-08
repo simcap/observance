@@ -24,7 +24,11 @@ observations = Observance.run(observer_1, observer_2, observer_3,
                                 observer_4, observer_5)
 
 observations[0].rating #=> 0.55
+observations[0].object #=> observer_2
+
 observations[1].rating #=> 0.55
+observations[1].object #=> observer_3
+
 observations[2].rating #=> 0.5
 observations[3].rating #=> 0.4
 observations[4].rating #=> 0.2
