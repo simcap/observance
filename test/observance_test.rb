@@ -20,13 +20,13 @@ class TestObservance < MiniTest::Test
     assert_equal o6, observations[5].object 
     assert_equal o7, observations[6].object 
 
-    assert_equal 0.6786, observations[0].factor 
-    assert_equal 0.6429, observations[1].factor 
-    assert_equal 0.6429, observations[2].factor 
-    assert_equal 0.6071, observations[3].factor 
-    assert_equal 0.6071, observations[4].factor 
-    assert_equal 0.5714, observations[5].factor 
-    assert_equal 0.3929, observations[6].factor 
+    assert_equal 0.6786, observations[0].rating 
+    assert_equal 0.6429, observations[1].rating 
+    assert_equal 0.6429, observations[2].rating 
+    assert_equal 0.6071, observations[3].rating 
+    assert_equal 0.6071, observations[4].rating 
+    assert_equal 0.5714, observations[5].rating 
+    assert_equal 0.3929, observations[6].rating 
   end
 
   def test_returns_ordered_observation_from_different_size_hashes
@@ -48,12 +48,12 @@ class TestObservance < MiniTest::Test
     assert_equal o6, observations[5].object 
     assert_equal o7, observations[6].object 
 
-    assert_equal 0.5054, observations[0].factor 
-    assert_equal 0.5048, observations[1].factor 
-    assert_equal 0.4793, observations[2].factor 
-    assert_equal 0.4491, observations[3].factor 
-    assert_equal 0.3965, observations[4].factor 
-    assert_equal 0.3095, observations[5].factor 
+    assert_equal 0.5054, observations[0].rating 
+    assert_equal 0.5048, observations[1].rating 
+    assert_equal 0.4793, observations[2].rating 
+    assert_equal 0.4491, observations[3].rating 
+    assert_equal 0.3965, observations[4].rating 
+    assert_equal 0.3095, observations[5].rating 
   end
 
   def test_returns_ordered_observation_from_same_size_arrays
@@ -75,11 +75,11 @@ class TestObservance < MiniTest::Test
     assert_equal o6, observations[5].object 
     assert_equal o7, observations[6].object 
 
-    assert_equal 0.6786, observations[0].factor 
-    assert_equal 0.6429, observations[1].factor 
-    assert_equal 0.6429, observations[2].factor 
-    assert_equal 0.6071, observations[3].factor 
-    assert_equal 0.6071, observations[4].factor 
-    assert_equal 0.5714, observations[5].factor 
+    assert_equal 0.6786, observations[0].rating 
+    assert_equal 0.6429, observations[1].rating 
+    assert_equal 0.6429, observations[2].rating 
+    assert_equal 0.6071, observations[3].rating 
+    assert_equal 0.6071, observations[4].rating 
+    assert_equal 0.5714, observations[5].rating 
   end
 end

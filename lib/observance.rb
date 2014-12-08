@@ -2,15 +2,15 @@ require 'observance/version'
 
 module Observance
 
-  Observation = Struct.new(:object, :index, :factor) do
+  Observation = Struct.new(:object, :index, :rating) do
     include Comparable
 
     def <=>(other)
       return nil unless other.is_a? self.class
-      if other.factor == self.factor
+      if other.rating == self.rating
         self.index <=> other.index
       else
-        other.factor <=> self.factor
+        other.rating <=> self.rating
       end
     end
   end
@@ -19,15 +19,15 @@ module Observance
     obs = if observations.first.is_a? Array
             wrapped_in_hashes(observations)
           elsif observations.first.respond_to? :to_h
-            observations
+            observations.map(&:to_h)
           else
             raise "Observations need to be Array or respond to 'to_h'"
           end
     obs.each_with_index.map do |c, index|
-      factor = (obs.inject(0) do |acc, o|
+      rating = (obs.inject(0) do |acc, o|
         acc = acc + c.similarity_to(o)
       end).fdiv(obs.size)
-      Observation.new(observations[index], index, factor.round(4))
+      Observation.new(observations[index], index, rating.round(4))
     end.sort
   end
 
@@ -41,8 +41,8 @@ module Observance
 end
 
 class Hash
-  # Returns a factor f between 0 and 1 that indicates
-  # the similarity factor of self to other
+  # Returns a rating f between 0 and 1 that indicates
+  # the similarity rating of self to other
   #
   # Calculates the number of keys with the same values
   # then divide the result by the number of keys
