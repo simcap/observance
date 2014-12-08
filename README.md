@@ -34,7 +34,7 @@ observations[3].rating #=> 0.4
 observations[4].rating #=> 0.2
 ```
 
-As expected it gives us that observer_2 and observer_3 are equally the most likely to have happened
+As expected it gives us that `observer_2` and `observer_3` are equally the most likely to have happened.
 
 ## Installation
 
@@ -42,19 +42,19 @@ Add `gem 'observance'` to your Gemfile or run `gem install observance`
 
 ## Testing
 
-This gem uses minitest. To test just run `bundle exec rake`.
+This gem uses minitest. Just run `bundle exec rake` to test.
 
 ## Features
 
 * Handle observations of **different sizes** (although makes less sense)
-* Observations can be **JSON documents** since Observance handles nested hashes
-* Filter which set of keys to run Observance on
+* Observations can be **JSON documents** since `Observance` handles nested hashes
+* Filter which set of keys to run `Observance` on
 
 ## Usage
 
 ### Observance input
 
-Observance needs as input collections of observations. An observation is anything
+`Observance` needs as input collections of observations. An observation is anything
 that responds to `to_a` or `to_h`.
 
 For instance Hashes or Arrays:
@@ -99,7 +99,7 @@ Running Observance, it returns a sorted Array of `Observance::Observation` objec
 
 **The higher the rating the better the observation.**
 
-The output Array of result is sorted by rating - with the highest rating (most likely) being the first.
+The results **are sorted by rating** - with the highest rating (most likely) being the first.
 
 ## Simple example
 
@@ -116,9 +116,9 @@ results = Observance.run(o1, o2, o3, o4, o5)
 results.class # => Array
 
 puts results
-#<struct Observance::Observation object=["head", "tail", "tail", "head", "tail"], index=0, rating=0.76>
-#<struct Observance::Observation object=["head", "head", "tail", "head", "tail"], index=2, rating=0.72>
-#<struct Observance::Observation object=["tail", "tail", "tail", "head", "tail"], index=1, rating=0.64>
-#<struct Observance::Observation object=["head", "head", "head", "head", "tail"], index=3, rating=0.6>
-#<struct Observance::Observation object=["head", "tail", "tail", "tail", "head"], index=4, rating=0.52>
+#<struct Observance::Observation rating=0.76, object=["head", "tail", "tail", "head", "tail"], index=0>
+#<struct Observance::Observation rating=0.72, object=["head", "head", "tail", "head", "tail"], index=2>
+#<struct Observance::Observation rating=0.64, object=["tail", "tail", "tail", "head", "tail"], index=1>
+#<struct Observance::Observation rating=0.6, object=["head", "head", "head", "head", "tail"], index=3>
+#<struct Observance::Observation rating=0.52, object=["head", "tail", "tail", "tail", "head"], index=4>
 ```

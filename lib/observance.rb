@@ -2,7 +2,7 @@ require 'observance/version'
 
 module Observance
 
-  Observation = Struct.new(:object, :index, :rating) do
+  Observation = Struct.new(:rating, :object, :index) do
     include Comparable
 
     def <=>(other)
@@ -27,7 +27,7 @@ module Observance
       rating = (obs.inject(0) do |acc, o|
         acc = acc + c.similarity_to(o)
       end).fdiv(obs.size)
-      Observation.new(observations[index], index, rating.round(4))
+      Observation.new(rating.round(4), observations[index], index)
     end.sort
   end
 
