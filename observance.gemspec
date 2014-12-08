@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Observance::VERSION
   spec.authors       = ["simcap"]
   spec.email         = ["simcap@fastmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Returns the most likely observation given multiple observations}
+  spec.description   = %q{Returns the most likely observation given multiple observations}
   spec.homepage      = ""
   spec.license       = "MIT"
 
