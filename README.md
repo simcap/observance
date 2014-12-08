@@ -1,7 +1,7 @@
 # Observance
 
-Given observations returns the most likely. An observation is anything
-that responds to `to_h` or `to_hash`
+Given a collection of observations it returns the most likely. An observation is anything
+that is an Array or that responds to `to_h`.
 
 As an example imagine a person flashing at a distance a card
 displaying a number from 1 to 10. If five people are observing
@@ -21,7 +21,8 @@ would either be 8-6-7-4 or 8-9-7-4.
 Using Observance we determine the most likely observation(s) with
 
 ```ruby
-observations = Observance.run(observer_1, observer_2, observer_3, observer_4, observer_5)
+observations = Observance.run(observer_1, observer_2, observer_3,
+                                observer_4, observer_5)
 
 r1 = observations[0]
 r1.rating #=> 0.55
@@ -35,7 +36,7 @@ r3 = observations[2]
 r3.rating #=> 0.5
 r3.object #=> {:first=>8, :second=>6, :third=>1, :fourth=>4}
 
-r4 = observations[2]
+r4 = observations[3]
 r4.rating #=> 0.4
 r4.object #=> {:first=>8, :second=>9, :third=>2, :fourth=>8}
 ```
@@ -48,7 +49,7 @@ Add `gem 'observance'` to your Gemfile or run `gem install observance`
 
 ## Usage
 
-This gem runs on given sets of observations. An observation must be an Array
+This gem runs on given collections of observations. An observation must be an Array
 or anything that responds to `to_h`.
 
 Hashes or Arrays
